@@ -1,0 +1,26 @@
+{
+  "name": "sort-table",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.26.5"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlhaMazurenko/sort-table.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlhaMazurenko/sort-table/issues"
+  },
+  "homepage": "https://github.com/OlhaMazurenko/sort-table#readme",
+  "description": ""
+}
