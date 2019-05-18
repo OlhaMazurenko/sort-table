@@ -21,7 +21,7 @@ function sortSortTable(colNum, type) {
       break;
   }
   rowsArray.sort(compare);
-    for (var i = 0; i < rowsArray.length; i++) {
+    for (let i = 0; i < rowsArray.length; i++) {
     tbody.appendChild(rowsArray[i]);
   }
   sortTable.appendChild(tbody);
