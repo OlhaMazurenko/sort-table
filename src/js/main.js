@@ -1,28 +1,40 @@
-let sortTable = document.getElementById('sortTable');
+const table = document.querySelector('table');
+const tbody = table.querySelector('tbody');
 
-sortTable.onclick = function(event) {
-  if (event.target.tagName != 'TH') return;
-  sortSortTable(event.target.cellIndex, event.target.getAttribute('data-type'));
-};
-function sortSortTable(colNum, type) {
-  let tbody = sortTable.getElementsByTagName('tbody')[0];
-  let rowsArray = [].slice.call(tbody.rows);
-  let compare;
-  switch (type) {
-    case 'number':
-      compare = function(rowA, rowB) {
-        return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
-      };
-      break;
-    case 'string':
-      compare = function(rowA, rowB) {
-        return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML;
-      };
-      break;
+function sortTable(index, type) {
+  let compare = function(rowA, rowB) {
+    const rowDataA = rowA.cells[index].innerHTML 
+    const rowDataB  = rowB.cells[index].innerHTML;
+    
+    if (type === 'number') {
+      return rowDataA - rowDataB;
+    } else {
+      if(rowDataA < rowDataB) return -1;
+      if(rowDataA > rowDataB) return 1;
+      if(rowDataA = rowDataB) return 0;
+
+    }
   }
-  rowsArray.sort(compare);
-    for (var i = 0; i < rowsArray.length; i++) {
-    tbody.appendChild(rowsArray[i]);
+  let rows = [].slice.call(tbody.rows);
+  rows.sort(compare);
+  table.removeChild(tbody);
+
+  for (let i = 0; i < rows.length; i++) {
+    tbody.appendChild(rows[i]);
   }
-  sortTable.appendChild(tbody);
+  
+  table.appendChild(tbody);
 }
+
+table.addEventListener('click', (event)=> {
+  const element = event.target;
+  const index = element.cellIndex;
+  const type = element.getAttribute('data-type');
+  if (element.tagName != 'TH') {
+    return;
+  } 
+    sortTable(index);
+});
+
+
+
