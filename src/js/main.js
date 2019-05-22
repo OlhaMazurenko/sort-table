@@ -35,6 +35,3 @@ table.addEventListener('click', (event)=> {
   } 
     sortTable(index);
 });
-
-
-
