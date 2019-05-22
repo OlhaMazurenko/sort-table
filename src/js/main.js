@@ -12,10 +12,9 @@ function sortTable(index, type) {
       if(rowDataA < rowDataB) return -1;
       if(rowDataA > rowDataB) return 1;
       if(rowDataA = rowDataB) return 0;
-
     }
   }
-<<<<<<< HEAD
+
   let rows = [].slice.call(tbody.rows);
   rows.sort(compare);
   table.removeChild(tbody);
@@ -36,11 +35,3 @@ table.addEventListener('click', (event)=> {
   } 
     sortTable(index);
 });
-=======
-  rowsArray.sort(compare);
-    for (let i = 0; i < rowsArray.length; i++) {
-    tbody.appendChild(rowsArray[i]);
-  }
-  sortTable.appendChild(tbody);
-}
->>>>>>> 38e76057647a0179bf7ba63196a32e56aef67be7
